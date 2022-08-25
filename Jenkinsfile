@@ -5,10 +5,11 @@ pipeline{
     }
     stages{
         stage('Build maven'){
-            step{
+            steps{
                 checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/LeoQueenDebalina/email_service.git']]])
                 sh 'mvn clean install'
             }
         }
+
     }
 }
