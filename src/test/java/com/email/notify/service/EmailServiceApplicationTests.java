@@ -21,27 +21,27 @@ class EmailServiceApplicationTests {
 	@Test
 	void contextLoads() {
 	}
-	@Autowired
-	private MailRepository mailRepository;
-	@Autowired
-	private MailService mailService;
-
-	@Test
-	public void myRepositoryTestFindById(){
-		List<Email> expectedResult = mailRepository.findAll();
-	   String id = "dianadebalina18@gmail.com";
-		assertEquals(expectedResult, this.mailRepository.getDetailByEmail("dianadebalina18@gmail.com"));
-	}
-	@Test
-	public void myServicsTestFindById(){
-		List<Email> expectedResult = mailRepository.findAll();
-	   String id = "dianadebalina18@gmail.com";
-		assertEquals(expectedResult, this.mailService.getDetailsById("dianadebalina18@gmail.com"));
-	}
-	@Test
-	void sendMailTest() throws Exception {
-		MailResponse expectedResult = new MailResponse(false, "Mail Send");
-		MailRequest mailRequest = new MailRequest("Kolkata","/home/cbnits-29/Downloads/images.png",new MessageRequest("dianadebalina18@gmail.com","gopinathbhowmick425@gmail.com","<h1>Hi There This is a Test Email Body</h1>","Spring Boot", ContentType.HTML), new String[]{"ayashasiddika00@gmail.com"},new String[]{"gs624874@gmail.com"});
-		assertEquals(expectedResult, this.mailService.sendEmail(mailRequest));
-	}
+//	@Autowired
+//	private MailRepository mailRepository;
+//	@Autowired
+//	private MailService mailService;
+//
+//	@Test
+//	void myRepositoryTestFindById(){
+//		List<Email> expectedResult = mailRepository.findAll();
+//	   String id = "dianadebalina18@gmail.com";
+//		assertEquals(expectedResult, this.mailRepository.getDetailByEmail("dianadebalina18@gmail.com"));
+//	}
+//	@Test
+//	void myServicsTestFindById(){
+//		List<Email> expectedResult = mailRepository.findAll();
+//	   String id = "dianadebalina18@gmail.com";
+//		assertEquals(expectedResult, this.mailService.getDetailsById("dianadebalina18@gmail.com"));
+//	}
+//	@Test
+//	void sendMailTest() throws Exception {
+//		MailResponse expectedResult = new MailResponse(false, "Mail Send");
+//		MailRequest mailRequest = new MailRequest("Kolkata","/home/cbnits-29/Downloads/images.png",new MessageRequest("dianadebalina18@gmail.com","gopinathbhowmick425@gmail.com","<h1>Hi There This is a Test Email Body</h1>","Spring Boot", ContentType.HTML), new String[]{"ayashasiddika00@gmail.com"},new String[]{"gs624874@gmail.com"});
+//		assertEquals(expectedResult, this.mailService.sendEmail(mailRequest));
+//	}
 }
