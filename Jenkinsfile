@@ -15,6 +15,12 @@ pipeline {
                     sh 'mvn clean package shade:shade'
                 }
             }
+        }stage('Build docker image'){
+            steps{
+                script{
+                    sh 'docker image build -t email-service:latest .'
+                }
+            }
         }
     }
 }
